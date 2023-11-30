@@ -5,7 +5,49 @@ sources:
     database: academy-dbt  
     schema: sap_adw
     description: Fonte de dados original da AdventureWorks
+    
     tables:
       - name: address
-      - description: endereço de entrega dos clientes
+        description: endereço de entrega dos clientes
 
+      - name: countryregion
+        description: lista de países
+          
+      - name: creditcard
+        description: s
+
+      - name: customer
+        description: s
+
+      - name: employee
+        description: s
+
+      - name: person
+        description: s
+
+      - name: product
+        description: Tabela de produtos
+
+      - name: productcategory
+        description: Categoria de produtos
+
+      - name: productsubcategory
+        description: Subcategoria de produtos
+
+      - name: salesorderdetail
+        description: s
+
+      - name: salesorderheader
+        description: s
+
+      - name: salesorderheadersalesreason
+        description: s
+
+      - name: salesreason
+        description: s
+
+      - name: stateprovince
+        description: s
+
+      - name: store
+        description: s
