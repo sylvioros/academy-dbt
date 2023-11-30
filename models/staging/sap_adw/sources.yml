@@ -1,0 +1,11 @@
+version: 2
+
+sources:
+  - name: adw
+    database: academy-dbt  
+    schema: sap_adw
+    description: Fonte de dados original da AdventureWorks
+    tables:
+      - name: address
+      - description: endereço de entrega dos clientes
+
