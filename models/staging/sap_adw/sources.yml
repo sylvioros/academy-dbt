@@ -7,5 +7,5 @@ sources:
     description: Fonte de dados original da AdventureWorks
     tables:
       - name: address
-      - description: endereço de entrega dos clientes
+        description: endereço de entrega dos clientes.
 
