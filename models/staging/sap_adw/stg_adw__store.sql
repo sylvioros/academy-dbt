@@ -3,7 +3,7 @@ with
         select
             cast(businessentityid as int) as idbusiness		
             ,cast(name as string) as loja
-            ,cast(salespersonid as int)	
+            ,cast(salespersonid as int)	 as salespersonid
             --cast(jobtitle as string) as cargo				
             --cast(salariedflag as bool) as flag_salario							
             --cast(currentflag as bool) as flag_atual

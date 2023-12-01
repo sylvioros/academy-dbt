@@ -1,5 +1,5 @@
 with
-    address as (
+    src_address as (
         select
             cast(addressid as int) as idendereco
             , cast(addressline1 as string) as endereco			
@@ -10,4 +10,4 @@ with
     )
 
 select *
-from address
+from src_address

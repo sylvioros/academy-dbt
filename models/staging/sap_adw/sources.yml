@@ -9,45 +9,95 @@ sources:
     tables:
       - name: address
         description: endereço de entrega dos clientes
+        columns:
+          - name: addressid
+            tests:
+              - unique
+              - not_null
 
       - name: countryregion
-        description: lista de países
-          
+        description: lista de países e siglas
+         
       - name: creditcard
-        description: s
+        description: id e tipo de cartão usado na compra
+        columns:
+          - name: creditcardid
+            tests:
+              - unique
+              - not_null
 
       - name: customer
-        description: s
+        description: id do cliente, id vendedor, id local e id loja
+        columns:
+          - name: customerid
+            tests:
+              - unique
+              - not_null
 
       - name: employee
-        description: s
+        description: dados dos funcionários (não apenas vendedores)
 
       - name: person
-        description: s
+        description: contém nome e tipo do funcionário
+        columns:
+          - name: businessentityid
+            tests:
+              - unique
+              - not_null
 
       - name: product
         description: Tabela de produtos
+        columns:
+          - name: productid
+            tests:
+              - unique
+              - not_null
 
       - name: productcategory
         description: Categoria de produtos
+        columns:
+          - name: productcategoryid
+            tests:
+              - unique
+              - not_null
 
       - name: productsubcategory
         description: Subcategoria de produtos
+        columns:
+          - name: productsubcategoryid
+            tests:
+              - unique
+              - not_null
 
       - name: salesorderdetail
-        description: s
+        description: dados dos pedidos / compras -  Quantidade, preço, desconto, etc.
+        columns:
+          - name: salesorderdetailid
+            tests:
+              - unique
+              - not_null
 
       - name: salesorderheader
-        description: s
+        description: dados dos pedidos / compras - imposto, frete, total, data do pedido, data do envio, etc. Além disso, contém várias FKs.
+        columns:
+          - name: salesorderid
+            tests:
+              - unique
+              - not_null
 
       - name: salesorderheadersalesreason
-        description: s
+        description: apenas 2 colunas - idpedido e salesreasonid
 
       - name: salesreason
-        description: s
+        description: contém a origem da jornada de compra - propaganda, patrocínio em evento, etc.
+        columns:
+          - name: salesreasonid
+            tests:
+              - unique
+              - not_null
 
       - name: stateprovince
-        description: s
+        description: dados dos estados e países de clientes e lojas
 
       - name: store
-        description: s
+        description: dados das lojas que comercializam os produtos

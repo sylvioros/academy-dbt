@@ -15,8 +15,5 @@ with
             end as string) as tipo_funcionario_descr
         from {{ source('adw', 'person') }}
     )
---select *
---from src_person
-
-select tipo_funcionario_descr from src_person 
-limit 5
+select *
+from src_person
