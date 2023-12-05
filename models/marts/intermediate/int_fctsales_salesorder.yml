@@ -1,0 +1,14 @@
+version: 2
+models:
+  - name: int_fctsales_salesorder
+    description: tabela intermediária à criação da fato vendas. O objetivo de unir salesorderdetail e salesorderheader
+    columns:
+      - name: id_pedidodetalhado
+        description: id do pedido por produto. Se um cliente comprou 5 produtos em uma mesma compra, esta compra terá 5 id_pedidodetalhado e 1 id_pedido
+        tests:
+          - unique
+          - not_null
+
+      - name: subtotal
+        description: é o total do pedido sem imposto e sem frete
+          

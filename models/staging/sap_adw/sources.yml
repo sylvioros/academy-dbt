@@ -70,7 +70,7 @@ sources:
               - not_null
 
       - name: salesorderdetail
-        description: dados dos pedidos / compras -  Quantidade, preço, desconto, etc.
+        description: vendas desagrupadas, 1 registro por produto comprado. dados dos pedidos / compras -  Quantidade, preço, desconto, etc.
         columns:
           - name: salesorderdetailid
             tests:
@@ -78,7 +78,7 @@ sources:
               - not_null
 
       - name: salesorderheader
-        description: dados dos pedidos / compras - imposto, frete, total, data do pedido, data do envio, etc. Além disso, contém várias FKs.
+        description: Vendas agrupadas (por salesorderid). Inlui dados dos pedidos / compras - imposto, frete, total, data do pedido, data do envio, etc. Além disso, contém várias FKs.
         columns:
           - name: salesorderid
             tests:
