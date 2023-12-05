@@ -1,0 +1,10 @@
+version: 2
+models:
+  - name: dim_dates
+    description: tabela calendário para filtrar da fato vendas
+    columns:
+      - name: data
+        tests:
+          - unique
+          - not_null
+          

@@ -86,7 +86,7 @@ sources:
               - not_null
 
       - name: salesorderheadersalesreason
-        description: apenas 2 colunas - idpedido e salesreasonid
+        description: apenas 2 colunas - idpedido e salesreasonid. Esta tabela serve para ligar salesreason a orderheader
 
       - name: salesreason
         description: contém a origem da jornada de compra - propaganda, patrocínio em evento, etc.

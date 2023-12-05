@@ -2,8 +2,8 @@ with
     src_person as (
         select
             cast(businessentityid as int) as idbusiness
-            ,cast(firstname || ' ' || lastname as string) as nome_funcionario
-            ,cast(persontype as string) as tipo_funcionario
+            ,cast(firstname || ' ' || lastname as string) as nome
+            ,cast(persontype as string) as persontype
             ,cast(case persontype
                 when 'EM' then 'Employee (non-sales)'
                 when 'GC' then 'General contact'
@@ -12,7 +12,7 @@ with
                 when 'SP' then 'Sales person'
                 when 'VC' then 'Vendor contact'
                 else 'Others'
-            end as string) as tipo_funcionario_descr
+            end as string) as persontype_descr
         from {{ source('adw', 'person') }}
     )
 select *

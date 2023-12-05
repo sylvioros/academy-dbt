@@ -1,7 +1,7 @@
 with
     src_salesorder as (
         select
-            cast(salesorderdetailid as int) as idpedidodetalhado -- id desta tabela salesorderdetail
+            cast(salesorderdetailid as int) as idpedidodetalhado -- id desta tabela (salesorderdetail)
             ,cast(salesorderid as int) as idpedido --id da tabela salesorderheader
             ,cast(orderqty as int) as qtd
             ,cast(productid as int) as idproduto

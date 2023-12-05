@@ -25,7 +25,7 @@ with
                 when 5 then 'enviado'
                 when 6 then 'cancelado'
                 else null
-            end as status_description
+            end as status_pedido
         from {{ source('adw', 'salesorderheader') }}
     )
 select *

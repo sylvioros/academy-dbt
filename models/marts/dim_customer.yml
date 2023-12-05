@@ -1,0 +1,16 @@
+version: 2
+
+models:
+  - name: dim_customer
+    description: tabela com nome de clientes e nome das lojas
+    columns:
+
+      - name: sk_cliente
+        tests:
+          - unique
+          - not_null
+
+      - name: id_cliente
+        tests:
+          - unique
+          - not_null
