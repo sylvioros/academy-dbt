@@ -5,7 +5,8 @@ with
     )
     ,
     dim_creditcard as (
-        select *
+        select sk_cartao as fk_cartao
+        , id_cartao
         from {{ ref('dim_creditcard') }}
     )
     ,
@@ -25,7 +26,10 @@ with
     )
     ,
     dim_salesreason as (
-        select *
+        select sk_salesreason as fk_salesreason
+        , id_pedido
+        , id_salesreason
+        , ispromocao
         from {{ ref('dim_salesreason') }}
     )
     ,
@@ -36,26 +40,25 @@ with
     ,
     join_fct_sales as (
         select
-            id_pedidodetalhado
+            fk_cartao
+            , fk_salesreason
+            , id_pedidodetalhado
             , int_sales.id_pedido
             , int_sales.id_produto
             , int_sales.id_cliente
             , dim_creditcard.id_cartao
+            --, dim_salesreason.id_salesreason
             , dim_address.id_endereco -- utilizada a chave da tabela dim para lidar com a divergência de endereços (em alguns records, é usado endereco de cobranca, em outros endereco de envio)
-            --, int_sales.id_produto as id_produto
-            --, preco_c_desconto as preco_pago
-            --, qtd as unidades
-            --, total_por_produto
-            --, subtotal as total_bruto
-            --, total
-            --, ispromocao
-            , motivo
-            --, motivo_tipo
+            , preco_c_desconto as preco_pago
+            , qtd as unidades
+            , total_por_produto
+            , subtotal as total_bruto
+            , total
+            , ispromocao
             , datapedido
             --, motivo
             --, motivo_tipo
             , status_pedido
-            --, id_ofertaespecial
             --, tipocartao as cartao
         from int_sales
         left join dim_address
@@ -76,10 +79,10 @@ with
         select
             {{dbt_utils.generate_surrogate_key(['id_pedidodetalhado', 'id_pedido'])}} as sk_vendas
             , {{dbt_utils.generate_surrogate_key(['id_produto'])}} as fk_produto
-            , {{dbt_utils.generate_surrogate_key(['id_pedido', 'motivo'])}} as fk_salesreason 
             , {{ dbt_utils.generate_surrogate_key(['id_cliente']) }} as fk_cliente
-            , {{dbt_utils.generate_surrogate_key(['id_cartao'])}} as fk_cartao
             , {{ dbt_utils.generate_surrogate_key(['id_endereco']) }} as fk_endereco
+            --, {{dbt_utils.generate_surrogate_key(['id_pedido', 'motivo'])}} as fk_salesreason
+            --, {{dbt_utils.generate_surrogate_key(['id_cartao'])}} as fk_cartao
             , *
         from join_fct_sales
     )

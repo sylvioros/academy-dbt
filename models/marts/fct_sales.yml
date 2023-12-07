@@ -17,11 +17,7 @@ models:
               field: sk_produto
 
       - name: fk_salesreason
-        tests:
-          - not_null
-          - relationships:
-              to: ref('dim_salesreason')
-              field: sk_salesreason
+        description: há valores faltando pois não há dado de motivo para alguns pedidos
 
       - name: fk_cliente
         tests:
@@ -31,11 +27,7 @@ models:
               field: sk_cliente
 
       - name: fk_cartao
-        tests:
-          - not_null
-          - relationships:
-              to: ref('dim_creditcard')
-              field: sk_cartao
+        description: há valores faltando pois não há dado de cartão para alguns pedidos
 
       - name: fk_endereco
         tests:
