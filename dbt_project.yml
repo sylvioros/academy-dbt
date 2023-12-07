@@ -26,7 +26,7 @@ models:
       +materialized: view
       +schema: stg
 
-seeds:
-  AdventureWorks:
+seeds: # Carga dos dados no DW
+  AdventureWorks: # Mesmo nome do modelo. Se mudar de 'AdventureWorks', alterar aqui
     sap_adventure_works:
       +schema: sap_adw

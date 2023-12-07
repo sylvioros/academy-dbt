@@ -1,0 +1,19 @@
+version: 2
+
+models:
+  - name: dim_address
+    description: dimensão de endereços de entregas dos clientes
+    columns:
+
+      - name: sk_endereco
+        description: surrogate key da dimensão endereço
+        tests:
+          - unique
+          - not_null
+
+      - name: id_endereco
+        description: chave natural da dimensão endereço
+        tests:
+          - unique
+          - not_null
+          

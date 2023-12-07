@@ -1,0 +1,17 @@
+version: 2
+
+models:
+  - name: dim_salesreason
+    description: tabela dimensão com motivo de compra ou origem das vendas. Status dos pedidos também estão nest tabela
+    columns:
+
+      - name: sk_salesreason
+        tests:
+          - unique
+          - not_null
+          
+      - name: id_pedido
+        tests:
+          - unique
+          - not_null
+      

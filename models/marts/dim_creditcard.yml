@@ -1,0 +1,15 @@
+version: 2
+models:
+  - name: dim_creditcard
+    description: tabela dimensão com dados de cartão de crédito - número id e tipo
+    columns:
+
+      - name: sk_cartao
+        tests:
+          - unique
+          - not_null
+      
+      - name: id_cartao
+          - unique
+          - not_null
+        

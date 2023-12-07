@@ -1,0 +1,16 @@
+version: 2
+models:
+  - name: dim_product
+    description: tabela dimensão produtos com informações do produto, categoria e subcategoria
+    columns:
+      
+      - name: sk_produto
+        tests:
+          - unique
+          - not_null
+          
+      - name: id_produto
+        tests:
+          - unique
+          - not_null
+          
