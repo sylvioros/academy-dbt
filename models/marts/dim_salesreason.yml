@@ -6,11 +6,12 @@ models:
     columns:
 
       - name: sk_salesreason
-          - unique
-          - not_null
-
-      - name: id_pedido
+        tests:
           - unique
           - not_null
           
+      - name: id_pedido
+        tests:
+          - unique
+          - not_null
       

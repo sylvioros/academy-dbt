@@ -16,7 +16,7 @@ with
             end as string) as salesreason_name_descr
             ,cast(case reasontype
                 when 'Other' then 'Outro'
-                when 'Promotion' then 'Campanhas'
+                when 'Promotion' then 'Campanhas (promotion)'
                 else reasontype
             end as string) as salesreason_type_descr
         from {{ source('adw', 'salesreason') }}

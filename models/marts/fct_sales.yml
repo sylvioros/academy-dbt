@@ -1,0 +1,52 @@
+version: 2
+models:
+  - name: fct_sales
+    description: tabela fato de vendas (salesorderdetail + salesorderheader). Grão é venda por item (produto)
+    columns:
+      
+      - name: sk_vendas
+        tests:
+          - unique
+          - not_null
+
+      - name: fk_produto
+        tests:
+          - not_null
+          - relationships:
+              to: ref('dim_product')
+              field: sk_produto
+
+      - name: fk_salesreason
+        tests:
+          - not_null
+          - relationships:
+              to: ref('dim_salesreason')
+              field: sk_salesreason
+
+      - name: fk_cliente
+        tests:
+          - not_null
+          - relationships:
+              to: ref('dim_customer')
+              field: sk_cliente
+
+      - name: fk_cartao
+        tests:
+          - not_null
+          - relationships:
+              to: ref('dim_creditcard')
+              field: sk_cartao
+
+      - name: fk_endereco
+        tests:
+          - not_null
+          - relationships:
+              to: ref('dim_address')
+              field: sk_endereco
+
+      - name: datapedido
+        tests:
+          - not_null
+          - relationships:
+              to: ref('dim_dates')
+              field: data

@@ -28,8 +28,9 @@ with
             , round(total, 2) as total
             , cast(extract(date from datapedido) as date) as datapedido
             , status_pedido
+            , idcliente as id_cliente
             , idcartao as id_cartao
-            , idendereco_cobranca
+            , idendereco_cobranca as id_endereco_cobranca
             , idendereco_envio as id_endereco_envio
             , idmetodo_envio as id_metodo_envio
         from salesorder
