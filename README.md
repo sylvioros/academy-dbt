@@ -1,3 +1,8 @@
+# Entregáveis do desafio (por Sylvio)
+VÍDEO: https://www.dropbox.com/s/m2g8mdg6byv9djk/Video_Sylvio-DESAFIO-ACADEMY.mp4
+MODELO CONCEITUAL: https://www.dropbox.com/scl/fi/82igwk9agewle47ftccqx/3-MODELO-CONCEITUAL.png?rlkey=2p64efeq1yumebck8xlqemg4n
+BI: https://www.dropbox.com/s/xllopfhjr64pih3/desafio_academy_sylvio.pbix
+
 # Indicium Academy
 
 Repositório para ser utilizado no desafio para a obtenção da certificação de Analytics Engineer by Indicium. Faça o fork deste repositório e o utilize durante o desafio para fazer a insgestão das tabelas do SAP do Adventure Works.
