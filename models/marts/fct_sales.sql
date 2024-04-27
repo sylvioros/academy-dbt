@@ -77,7 +77,7 @@ with
     ,
     fct_sales as (
         select
-            {{dbt_utils.generate_surrogate_key(['id_pedidodetalhado', 'id_pedido'])}} as sk_vendas
+            {{dbt_utils.generate_surrogate_key(['id_pedidodetalhado', 'id_pedido'])}} as sk_vendas -- sk
             , {{dbt_utils.generate_surrogate_key(['id_produto'])}} as fk_produto
             , {{ dbt_utils.generate_surrogate_key(['id_cliente']) }} as fk_cliente
             , {{ dbt_utils.generate_surrogate_key(['id_endereco']) }} as fk_endereco
